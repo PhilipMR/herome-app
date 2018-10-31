@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HeromeApp"
+             x:Class="HeromeApp.LoginPage"
+             BackgroundColor="#0A2F5C"
+             NavigationPage.HasNavigationBar="false">
+    <StackLayout>
+        <local:ImageEntry 
+            Placeholder="E-mail"
+            PlaceholderColor="White" 
+            TextColor="White"
+            Image="icon_mail"
+            ImageWidth="30"
+            ImageHeight="20"/>
+        <local:ImageEntry 
+            Placeholder="Wachtwoord" 
+            PlaceholderColor="White" 
+            TextColor="White"
+            Image="icon_lock"
+            ImageWidth="30"
+            ImageHeight="30"
+            IsPassword="True"/>
+        <Button 
+            Text="Inloggen"
+            BackgroundColor="#80D6F1"
+            Clicked="LoginButton_Clicked"/>
+        <Button 
+            Text="Registreren"
+            BackgroundColor="#012B65"/>
+    </StackLayout>
+</ContentPage>
