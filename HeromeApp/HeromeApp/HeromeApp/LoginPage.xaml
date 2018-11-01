@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:HeromeApp"
              x:Class="HeromeApp.LoginPage"
-             BackgroundColor="#0A2F5C"
+             BackgroundImage="background_login"
              NavigationPage.HasNavigationBar="false">
     <Grid>
         <Grid.RowDefinitions>
@@ -72,7 +72,7 @@
             </StackLayout>
 
             <!-- Login with social media -->
-            <StackLayout Spacing="10" VerticalOptions="CenterAndExpand">
+            <StackLayout Spacing="10" VerticalOptions="StartAndExpand">
                 <Label
                     HorizontalOptions="CenterAndExpand"
                     Text="Inloggen via Social Media"
