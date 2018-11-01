@@ -8,6 +8,10 @@
                 <On Platform="Android" Value="OpenSans-Regular.ttf#Open Sans" />
                 <On Platform="iOS" Value="OpenSans-Regular" />
             </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="OpenSans-Light">
+                <On Platform="Android" Value="OpenSans-Light.ttf#Open Sans" />
+                <On Platform="iOS" Value="OpenSans-Light" />
+            </OnPlatform>
             <OnPlatform x:TypeArguments="x:String" x:Key="OpenSans-Bold">
                 <On Platform="Android" Value="OpenSans-Bold.ttf#Open Sans" />
                 <On Platform="iOS" Value="OpenSans-Bold" />

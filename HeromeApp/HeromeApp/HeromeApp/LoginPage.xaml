@@ -8,8 +8,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -17,33 +16,105 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <StackLayout Grid.Row="1" Grid.Column="1">
-            <local:ImageEntry 
-                Placeholder="E-mail"
-                PlaceholderColor="White" 
-                TextColor="White"
-                Image="icon_mail"
-                ImageWidth="30"
-                ImageHeight="20"/>
-            <local:ImageEntry 
-                Placeholder="Wachtwoord" 
-                PlaceholderColor="White" 
-                TextColor="White"
-                Image="icon_lock"
-                ImageWidth="30"
-                ImageHeight="30"
-                IsPassword="True"/>
-            <Button 
-                Text="Inloggen"
-                TextColor="White"
-                FontFamily="{StaticResource OpenSans-Bold}"
-                BackgroundColor="#80D6F1"
-                Clicked="LoginButton_Clicked"/>
-            <Button 
-                Text="Registreren"
-                TextColor="White"
-                FontFamily="{StaticResource OpenSans-Bold}"
-                BackgroundColor="#012B65"/>
+        <!-- The main body -->
+        <StackLayout Grid.Row="1" Grid.Column="1" Spacing="1" VerticalOptions="Fill">
+            <!-- Login with regular credentials -->
+            <StackLayout Spacing="-3">
+                <StackLayout Spacing="-5">
+                    <local:HeromeImageEntry 
+                        Placeholder="E-mail"
+                        PlaceholderColor="White" 
+                        TextColor="White"
+                        FontFamily="{StaticResource OpenSans-Light}"
+                        FontSize="Small"
+                        Image="icon_mail"
+                        ImageWidth="25"
+                        ImageHeight="20"/>
+                    <local:HeromeImageEntry 
+                        Placeholder="Wachtwoord" 
+                        PlaceholderColor="White" 
+                        FontFamily="{StaticResource OpenSans-Light}"
+                        FontSize="Small"
+                        TextColor="White"
+                        Image="icon_lock"
+                        ImageWidth="25"
+                        ImageHeight="30"
+                        IsPassword="True"/>
+                </StackLayout>
+
+                <StackLayout Spacing="5">
+                    <local:HeromeButton 
+                        Text="Inloggen"
+                        TextColor="White"
+                        HeightRequest="30"
+                        FontFamily="{StaticResource OpenSans-Bold}"
+                        BackgroundColor="#80D6F1"
+                        Clicked="LoginButton_Clicked"/>
+                    <local:HeromeButton  
+                        Text="Registreren"
+                        TextColor="White"
+                        HeightRequest="30"
+                        FontFamily="{StaticResource OpenSans-Bold}"
+                        BackgroundColor="#012B65"/>
+                </StackLayout>
+                
+                <local:HeromeButton  
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Wachtwoord vergeten?"
+                    TextColor="White"
+                    FontFamily="{StaticResource OpenSans-Light}"
+                    FontSize="Micro"
+                    BackgroundColor="Transparent"/>
+            </StackLayout>
+
+            <!-- Login with social media -->
+            <StackLayout>
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Inloggen via Social Media"
+                    TextColor="White"
+                    FontFamily="{StaticResource OpenSans-Light}"
+                    FontSize="Micro"/>
+                <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Spacing="5">
+                    <BoxView 
+                        Color="White"       
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="2"/>
+                    <local:HeromeBoxView 
+                        CornerRadius="25"
+                        Color="White"
+                        WidthRequest="4"
+                        HeightRequest="4"/>
+                    <BoxView 
+                        Color="White"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="2"/>
+                </StackLayout>
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Spacing="5">
+                    <Image
+                        Source="icon_facebook"
+                        WidthRequest="30"
+                        HeightRequest="30"/>
+                    <Image
+                        Source="icon_twitter"
+                        WidthRequest="30"
+                        HeightRequest="30"/>
+                </StackLayout>
+            </StackLayout>
+
+
+            <!-- Continue without logging in -->
+            <local:HeromeButton
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="Start"
+                    Text="Doorgaan zonder registreren"
+                    TextColor="White"
+                    Opacity="0.5"
+                    FontFamily="{StaticResource OpenSans-Light}"
+                    FontSize="Micro"
+                    BackgroundColor="Transparent"/>
         </StackLayout>
     </Grid>
 </ContentPage>

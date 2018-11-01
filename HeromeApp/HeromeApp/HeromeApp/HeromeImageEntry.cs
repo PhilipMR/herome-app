@@ -2,24 +2,24 @@
 
 namespace HeromeApp
 {
-    public class ImageEntry : Entry
+    public class HeromeImageEntry : Entry
     {
-		public ImageEntry()
+		public HeromeImageEntry()
 		{
 			this.HeightRequest = 50;
 		}
 
 		public static readonly BindableProperty ImageProperty =
-			BindableProperty.Create(nameof(Image), typeof(string), typeof(ImageEntry), string.Empty);
+			BindableProperty.Create(nameof(Image), typeof(string), typeof(HeromeImageEntry), string.Empty);
 
 		public static readonly BindableProperty LineColorProperty =
-			BindableProperty.Create(nameof(LineColor), typeof(Xamarin.Forms.Color), typeof(ImageEntry), Color.White);
+			BindableProperty.Create(nameof(LineColor), typeof(Xamarin.Forms.Color), typeof(HeromeImageEntry), Color.White);
 
 		public static readonly BindableProperty ImageHeightProperty =
-			BindableProperty.Create(nameof(ImageHeight), typeof(int), typeof(ImageEntry), 40);
+			BindableProperty.Create(nameof(ImageHeight), typeof(int), typeof(HeromeImageEntry), 40);
 
 		public static readonly BindableProperty ImageWidthProperty =
-			BindableProperty.Create(nameof(ImageWidth), typeof(int), typeof(ImageEntry), 40);
+			BindableProperty.Create(nameof(ImageWidth), typeof(int), typeof(HeromeImageEntry), 40);
 
 		public Color LineColor
 		{
