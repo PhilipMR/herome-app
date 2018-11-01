@@ -6,7 +6,10 @@
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to the Home Page!"
+            <Label 
+                Text="Welcome to the Home Page!"
+                TextColor="White"
+                FontFamily="{StaticResource OpenSans-Regular}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
