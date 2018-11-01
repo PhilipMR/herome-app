@@ -7,8 +7,8 @@
              NavigationPage.HasNavigationBar="false">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -17,9 +17,9 @@
         </Grid.ColumnDefinitions>
 
         <!-- The main body -->
-        <StackLayout Grid.Row="1" Grid.Column="1" Spacing="1" VerticalOptions="Fill">
+        <StackLayout Grid.Row="1" Grid.Column="1" Spacing="15" VerticalOptions="Fill">
             <!-- Login with regular credentials -->
-            <StackLayout Spacing="-3">
+            <StackLayout Spacing="0" VerticalOptions="Start">
                 <StackLayout Spacing="-5">
                     <local:HeromeImageEntry 
                         x:Name="txtEmail"
@@ -48,14 +48,14 @@
                     <local:HeromeButton 
                         Text="Inloggen"
                         TextColor="White"
-                        HeightRequest="30"
+                        HeightRequest="40"
                         FontFamily="{StaticResource OpenSans-Bold}"
                         BackgroundColor="#80D6F1"
                         Clicked="LoginButton_Clicked"/>
                     <local:HeromeButton  
                         Text="Registreren"
                         TextColor="White"
-                        HeightRequest="30"
+                        HeightRequest="40"
                         FontFamily="{StaticResource OpenSans-Bold}"
                         BackgroundColor="#012B65"
                         Clicked="RegisterButton_Clicked"/>
@@ -72,7 +72,7 @@
             </StackLayout>
 
             <!-- Login with social media -->
-            <StackLayout>
+            <StackLayout Spacing="10" VerticalOptions="CenterAndExpand">
                 <Label
                     HorizontalOptions="CenterAndExpand"
                     Text="Inloggen via Social Media"
@@ -100,13 +100,13 @@
                     <Image
                         x:Name="imgFacebookIcon"
                         Source="icon_facebook"
-                        WidthRequest="30"
-                        HeightRequest="30"/>
+                        WidthRequest="40"
+                        HeightRequest="40"/>
                     <Image
                         x:Name="imgTwitterIcon"
                         Source="icon_twitter"
-                        WidthRequest="30"
-                        HeightRequest="30"/>
+                        WidthRequest="40"
+                        HeightRequest="40"/>
                 </StackLayout>
             </StackLayout>
 
@@ -114,7 +114,7 @@
             <!-- Continue without logging in -->
             <local:HeromeButton
                     HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="Start"
+                    VerticalOptions="EndAndExpand"
                     Text="Doorgaan zonder registreren"
                     TextColor="White"
                     Opacity="0.5"

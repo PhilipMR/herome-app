@@ -1,4 +1,5 @@
 ﻿using Android.Content;
+using Android.Content.Res;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.Support.V4.Content;
@@ -12,6 +13,29 @@ namespace HeromeApp.Droid
 {
     class HeromeImageEntryRenderer : EntryRenderer
     {
+		/// <summary>
+		/// A BitmapDrawable that can be locally offsetted.
+		/// </summary>
+		private class DisplacedBitmapDrawable : BitmapDrawable
+		{
+			public int OffsetX { get; set; }
+			public int OffsetY { get; set; }
+
+			public DisplacedBitmapDrawable(Resources res, Bitmap bitmap) : base(res, bitmap)
+			{
+				this.OffsetX = 0;
+				this.OffsetY = 0;
+			}
+
+			public override void Draw(Canvas canvas)
+			{
+				canvas.Save();
+				canvas.Translate(this.OffsetX, this.OffsetY);
+				base.Draw(canvas);
+				canvas.Restore();
+			}
+		}
+
 		public HeromeImageEntryRenderer(Context context) : base(context)
         {
         }
@@ -24,14 +48,21 @@ namespace HeromeApp.Droid
 			HeromeImageEntry entry = (HeromeImageEntry)this.Element;
 			var editText = this.Control;
 			if (!string.IsNullOrEmpty(entry.Image)) {
-				editText.SetCompoundDrawablesWithIntrinsicBounds(GetDrawable(entry, entry.Image), null, null, null);
+				var drawable = GetDrawable(entry, entry.Image);
+				drawable.OffsetY = CalculateDesiredDrawableOffsetY(editText, drawable, 10);
+				editText.SetCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
 			}
-			editText.CompoundDrawablePadding = 25;
-			editText.SetPadding(12, 60, 12, 33);
+			editText.CompoundDrawablePadding = 40;
+			editText.SetPadding(
+				editText.PaddingLeft, 
+				editText.PaddingTop + 20, 
+				editText.PaddingRight, 
+				editText.PaddingBottom
+			);
 			editText.Background.SetColorFilter(entry.LineColor.ToAndroid(), PorterDuff.Mode.SrcAtop);
 		}
 
-		private BitmapDrawable GetDrawable(HeromeImageEntry entry, string imagePath)
+		private DisplacedBitmapDrawable GetDrawable(HeromeImageEntry entry, string imagePath)
 		{
 			int resID = Resources.GetIdentifier(imagePath, "drawable", this.Context.PackageName);
 			var drawable = ContextCompat.GetDrawable(this.Context, resID);
@@ -41,7 +72,17 @@ namespace HeromeApp.Droid
 				entry.ImageHeight * 2, 
 				true
 			);
-			return new BitmapDrawable(Resources, bitmap);
+			return new DisplacedBitmapDrawable(Resources, bitmap);
+		}
+
+		private int CalculateDesiredDrawableOffsetY(Android.Views.View view, Drawable drawable, int offsetFromBottom)
+		{
+			Rect viewRect = new Rect();
+			view.GetDrawingRect(viewRect);
+			var viewBottom = viewRect.Bottom;
+			var drawableBottom = drawable.Bounds.Bottom;
+			var desiredDrawableBottom = viewBottom - offsetFromBottom;
+			return desiredDrawableBottom - drawableBottom;
 		}
 	}
 }
