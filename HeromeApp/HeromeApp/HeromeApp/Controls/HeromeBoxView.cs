@@ -4,6 +4,7 @@ namespace HeromeApp.Controls
 {
     public class HeromeBoxView : BoxView
     {
+		#region Bindable properties
 		public static readonly BindableProperty CornerRadiusProperty = 
 			BindableProperty.Create(nameof(CornerRadius), typeof(double), typeof(HeromeBoxView), 0.0);
 
@@ -12,5 +13,6 @@ namespace HeromeApp.Controls
 			get { return (double)GetValue(CornerRadiusProperty); }
 			set { SetValue(CornerRadiusProperty, value); }
 		}
+		#endregion
 	}
 }

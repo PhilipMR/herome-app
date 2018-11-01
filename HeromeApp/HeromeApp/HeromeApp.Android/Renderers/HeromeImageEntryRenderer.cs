@@ -11,8 +11,9 @@ using Xamarin.Forms.Platform.Android;
 [assembly: ExportRenderer(typeof(HeromeImageEntry), typeof(HeromeImageEntryRenderer))]
 namespace HeromeApp.Droid.Renderers
 {
-    class HeromeImageEntryRenderer : EntryRenderer
+	class HeromeImageEntryRenderer : EntryRenderer
     {
+		#region DisplacedBitmapDrawable
 		/// <summary>
 		/// A BitmapDrawable that can be locally offsetted.
 		/// </summary>
@@ -35,11 +36,15 @@ namespace HeromeApp.Droid.Renderers
 				canvas.Restore();
 			}
 		}
+		#endregion
 
+		#region Constructors
 		public HeromeImageEntryRenderer(Context context) : base(context)
         {
         }
+		#endregion
 
+		#region Renderer overrides
 		protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
 		{
 			base.OnElementChanged(e);
@@ -61,7 +66,9 @@ namespace HeromeApp.Droid.Renderers
 			);
 			editText.Background.SetColorFilter(entry.LineColor.ToAndroid(), PorterDuff.Mode.SrcAtop);
 		}
+		#endregion
 
+		#region Private methods
 		private DisplacedBitmapDrawable GetDrawable(HeromeImageEntry entry, string imagePath)
 		{
 			int resID = Resources.GetIdentifier(imagePath, "drawable", this.Context.PackageName);
@@ -84,5 +91,6 @@ namespace HeromeApp.Droid.Renderers
 			var desiredDrawableBottom = viewBottom - offsetFromBottom;
 			return desiredDrawableBottom - drawableBottom;
 		}
+		#endregion
 	}
 }

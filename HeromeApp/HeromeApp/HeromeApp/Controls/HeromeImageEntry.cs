@@ -4,11 +4,7 @@ namespace HeromeApp.Controls
 {
     public class HeromeImageEntry : Entry
     {
-		public HeromeImageEntry()
-		{
-			this.HeightRequest = 50;
-		}
-
+		#region Bindable properties
 		public static readonly BindableProperty ImageProperty =
 			BindableProperty.Create(nameof(Image), typeof(string), typeof(HeromeImageEntry), string.Empty);
 
@@ -44,5 +40,6 @@ namespace HeromeApp.Controls
 			get { return (string)GetValue(ImageProperty); }
 			set { SetValue(ImageProperty, value); }
 		}
+		#endregion
 	}
 }

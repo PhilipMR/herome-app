@@ -11,14 +11,19 @@ namespace HeromeApp.Droid.Renderers
 {
 	class HeromeBoxViewRenderer : BoxRenderer
 	{
+		#region Fields
 		private float _cornerRadius;
 		private RectF _bounds;
 		private Path _path;
+		#endregion
 
+		#region Constructors
 		public HeromeBoxViewRenderer(Context context) : base(context)
 		{
 		}
+		#endregion
 
+		#region Renderer overrides
 		protected override void OnElementChanged(ElementChangedEventArgs<BoxView> e)
 		{
 			base.OnElementChanged(e);
@@ -47,5 +52,6 @@ namespace HeromeApp.Droid.Renderers
 			base.Draw(canvas);
 			canvas.Restore();
 		}
+		#endregion
 	}
 }
