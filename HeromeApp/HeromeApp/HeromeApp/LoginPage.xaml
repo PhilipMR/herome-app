@@ -26,6 +26,7 @@
                         Placeholder="E-mail"
                         PlaceholderColor="White" 
                         TextColor="White"
+                        Keyboard="Email"
                         FontFamily="{StaticResource OpenSans-Light}"
                         FontSize="Small"
                         Image="icon_mail"
@@ -72,7 +73,7 @@
             </StackLayout>
 
             <!-- Login with social media -->
-            <StackLayout Spacing="10" VerticalOptions="StartAndExpand">
+            <StackLayout Spacing="10" VerticalOptions="CenterAndExpand">
                 <Label
                     HorizontalOptions="CenterAndExpand"
                     Text="Inloggen via Social Media"
