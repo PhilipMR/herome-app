@@ -1,11 +1,11 @@
 ﻿using Android.Content;
-using HeromeApp;
-using HeromeApp.Droid;
+using HeromeApp.Controls;
+using HeromeApp.Droid.Renderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer(typeof(HeromeButton), typeof(HeromeButtonRenderer))]
-namespace HeromeApp.Droid
+namespace HeromeApp.Droid.Renderers
 {
 	class HeromeButtonRenderer : ButtonRenderer
 	{

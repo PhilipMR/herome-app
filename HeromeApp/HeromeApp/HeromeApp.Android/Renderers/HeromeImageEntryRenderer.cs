@@ -3,13 +3,13 @@ using Android.Content.Res;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.Support.V4.Content;
-using HeromeApp;
-using HeromeApp.Droid;
+using HeromeApp.Controls;
+using HeromeApp.Droid.Renderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer(typeof(HeromeImageEntry), typeof(HeromeImageEntryRenderer))]
-namespace HeromeApp.Droid
+namespace HeromeApp.Droid.Renderers
 {
     class HeromeImageEntryRenderer : EntryRenderer
     {

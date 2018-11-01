@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:HeromeApp"
+             xmlns:controls="clr-namespace:HeromeApp.Controls"
              x:Class="HeromeApp.LoginPage"
              BackgroundImage="background_login"
              NavigationPage.HasNavigationBar="false">
@@ -21,7 +22,7 @@
             <!-- Login with regular credentials -->
             <StackLayout Spacing="0" VerticalOptions="Start">
                 <StackLayout Spacing="-5">
-                    <local:HeromeImageEntry 
+                    <controls:HeromeImageEntry 
                         x:Name="txtEmail"
                         Placeholder="E-mail"
                         PlaceholderColor="White" 
@@ -32,7 +33,7 @@
                         Image="icon_mail"
                         ImageWidth="25"
                         ImageHeight="20"/>
-                    <local:HeromeImageEntry 
+                    <controls:HeromeImageEntry 
                         x:Name="txtPassword"
                         Placeholder="Wachtwoord" 
                         PlaceholderColor="White" 
@@ -46,14 +47,14 @@
                 </StackLayout>
 
                 <StackLayout Spacing="5">
-                    <local:HeromeButton 
+                    <controls:HeromeButton 
                         Text="Inloggen"
                         TextColor="White"
                         HeightRequest="40"
                         FontFamily="{StaticResource OpenSans-Bold}"
                         BackgroundColor="#80D6F1"
                         Clicked="LoginButton_Clicked"/>
-                    <local:HeromeButton  
+                    <controls:HeromeButton  
                         Text="Registreren"
                         TextColor="White"
                         HeightRequest="40"
@@ -61,8 +62,8 @@
                         BackgroundColor="#012B65"
                         Clicked="RegisterButton_Clicked"/>
                 </StackLayout>
-                
-                <local:HeromeButton  
+
+                <controls:HeromeButton  
                     HorizontalOptions="CenterAndExpand"
                     Text="Wachtwoord vergeten?"
                     TextColor="White"
@@ -86,7 +87,7 @@
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="Center"
                         HeightRequest="2"/>
-                    <local:HeromeBoxView 
+                    <controls:HeromeBoxView 
                         CornerRadius="25"
                         Color="White"
                         WidthRequest="4"
@@ -113,7 +114,7 @@
 
 
             <!-- Continue without logging in -->
-            <local:HeromeButton
+            <controls:HeromeButton
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="EndAndExpand"
                     Text="Doorgaan zonder registreren"

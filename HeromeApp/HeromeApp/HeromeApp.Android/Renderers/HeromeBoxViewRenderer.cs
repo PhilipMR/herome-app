@@ -1,13 +1,13 @@
 ﻿using Android.Content;
 using Android.Graphics;
 using Android.Util;
-using HeromeApp;
-using HeromeApp.Droid;
+using HeromeApp.Controls;
+using HeromeApp.Droid.Renderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer(typeof(HeromeBoxView), typeof(HeromeBoxViewRenderer))]
-namespace HeromeApp.Droid
+namespace HeromeApp.Droid.Renderers
 {
 	class HeromeBoxViewRenderer : BoxRenderer
 	{
