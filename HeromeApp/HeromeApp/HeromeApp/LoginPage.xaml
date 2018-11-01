@@ -22,6 +22,7 @@
             <StackLayout Spacing="-3">
                 <StackLayout Spacing="-5">
                     <local:HeromeImageEntry 
+                        x:Name="txtEmail"
                         Placeholder="E-mail"
                         PlaceholderColor="White" 
                         TextColor="White"
@@ -31,6 +32,7 @@
                         ImageWidth="25"
                         ImageHeight="20"/>
                     <local:HeromeImageEntry 
+                        x:Name="txtPassword"
                         Placeholder="Wachtwoord" 
                         PlaceholderColor="White" 
                         FontFamily="{StaticResource OpenSans-Light}"
@@ -55,7 +57,8 @@
                         TextColor="White"
                         HeightRequest="30"
                         FontFamily="{StaticResource OpenSans-Bold}"
-                        BackgroundColor="#012B65"/>
+                        BackgroundColor="#012B65"
+                        Clicked="RegisterButton_Clicked"/>
                 </StackLayout>
                 
                 <local:HeromeButton  
@@ -64,7 +67,8 @@
                     TextColor="White"
                     FontFamily="{StaticResource OpenSans-Light}"
                     FontSize="Micro"
-                    BackgroundColor="Transparent"/>
+                    BackgroundColor="Transparent"
+                    Clicked="ForgotPassword_Clicked"/>
             </StackLayout>
 
             <!-- Login with social media -->
@@ -94,10 +98,12 @@
                 </StackLayout>
                 <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Spacing="5">
                     <Image
+                        x:Name="imgFacebookIcon"
                         Source="icon_facebook"
                         WidthRequest="30"
                         HeightRequest="30"/>
                     <Image
+                        x:Name="imgTwitterIcon"
                         Source="icon_twitter"
                         WidthRequest="30"
                         HeightRequest="30"/>
@@ -114,7 +120,8 @@
                     Opacity="0.5"
                     FontFamily="{StaticResource OpenSans-Light}"
                     FontSize="Micro"
-                    BackgroundColor="Transparent"/>
+                    BackgroundColor="Transparent"
+                    Clicked="SkipLogin_Clicked"/>
         </StackLayout>
     </Grid>
 </ContentPage>
