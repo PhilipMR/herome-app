@@ -1,6 +1,11 @@
 ﻿using Android.Content;
+using Android.Graphics;
+using Android.Graphics.Drawables;
+using Android.Support.V4.Content;
+using Android.Util;
 using HeromeApp.Controls;
 using HeromeApp.Droid.Renderers;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
@@ -19,6 +24,8 @@ namespace HeromeApp.Droid.Renderers
 		protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Button> e)
 		{
 			base.OnElementChanged(e);
+			if (e.OldElement != null || e.NewElement == null)
+				return;
 			Control.SetPadding(0, 0, 0, 0);
 		}
 		#endregion

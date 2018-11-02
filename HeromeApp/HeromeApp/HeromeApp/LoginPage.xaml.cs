@@ -24,11 +24,13 @@ namespace HeromeApp
 		private void LoginButton_Clicked(object sender, EventArgs e)
         {
 			Console.WriteLine("Login button clicked!");
+			Navigation.PushAsync(new HomePage());
 		}
 
 		private void RegisterButton_Clicked(object sender, EventArgs e)
 		{
 			Console.WriteLine("Register button clicked!");
+			Navigation.PushAsync(new HomePage());
 		}
 
 		private void ForgotPassword_Clicked(object sender, EventArgs e)
