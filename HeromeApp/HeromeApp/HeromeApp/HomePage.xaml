@@ -57,6 +57,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
+                    <!-- Nails panel -->
                     <controls:HeromeImage
                         Grid.Column="0" 
                         Grid.Row="0"
@@ -65,7 +66,16 @@
                         HorizontalOptions="FillAndExpand" 
                         VerticalOptions="FillAndExpand"
                         Source="panel_nails"/>
+                    <Label
+                        Grid.Column="0" 
+                        Grid.Row="0"
+                        VerticalOptions="End"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="NAGELS"
+                        TextColor="White"
+                        FontFamily="{StaticResource OpenSans-Bold}"/>
 
+                    <!-- Hands panel -->
                     <controls:HeromeImage
                         Grid.Column="0" 
                         Grid.Row="1"
@@ -74,7 +84,16 @@
                         HorizontalOptions="FillAndExpand" 
                         VerticalOptions="FillAndExpand"
                         Source="panel_hands"/>
+                    <Label
+                        Grid.Column="0" 
+                        Grid.Row="1"
+                        VerticalOptions="End"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="HANDEN"
+                        TextColor="White"
+                        FontFamily="{StaticResource OpenSans-Bold}"/>
 
+                    <!-- Cuticles panel -->
                     <controls:HeromeImage 
                         Grid.Column="1" 
                         Grid.Row="0" 
@@ -83,7 +102,16 @@
                         HorizontalOptions="FillAndExpand" 
                         VerticalOptions="FillAndExpand"
                         Source="panel_cuticles"/>
+                    <Label
+                        Grid.Column="1" 
+                        Grid.Row="0"
+                        VerticalOptions="End"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="NAGELRIEMEN"
+                        TextColor="White"
+                        FontFamily="{StaticResource OpenSans-Bold}"/>
 
+                    <!-- Polish panel -->
                     <controls:HeromeImage
                         Grid.Column="1" 
                         Grid.Row="1" 
@@ -92,6 +120,14 @@
                         HorizontalOptions="FillAndExpand" 
                         VerticalOptions="FillAndExpand"
                         Source="panel_polish"/>
+                    <Label
+                        Grid.Column="1" 
+                        Grid.Row="1"
+                        VerticalOptions="End"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="NAGELLAK"
+                        TextColor="White"
+                        FontFamily="{StaticResource OpenSans-Bold}"/>
                 </Grid>
             </StackLayout>
         </StackLayout>
