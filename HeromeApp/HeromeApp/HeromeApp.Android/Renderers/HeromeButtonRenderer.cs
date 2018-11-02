@@ -1,11 +1,6 @@
 ﻿using Android.Content;
-using Android.Graphics;
-using Android.Graphics.Drawables;
-using Android.Support.V4.Content;
-using Android.Util;
 using HeromeApp.Controls;
 using HeromeApp.Droid.Renderers;
-using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 

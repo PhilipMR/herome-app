@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace HeromeApp
 {
     public partial class LoginPage : ContentPage
     {
-        public LoginPage()
+		#region Constructors
+		public LoginPage()
         {
             InitializeComponent();
 
@@ -20,17 +22,22 @@ namespace HeromeApp
 				NumberOfTapsRequired = 1
 			});
 		}
+		#endregion
 
+		#region Control events
 		private void LoginButton_Clicked(object sender, EventArgs e)
         {
 			Console.WriteLine("Login button clicked!");
+
+			// NOTE: Should be MoveToPageAndResetNavigation(new HomePage()) like the other buttons.
+			//		 We don't clear the navigation stack here right now now because it's useful for debugging.
 			Navigation.PushAsync(new HomePage());
 		}
 
 		private void RegisterButton_Clicked(object sender, EventArgs e)
 		{
 			Console.WriteLine("Register button clicked!");
-			Navigation.PushAsync(new HomePage());
+			MoveToPageAndResetNavigation(new HomePage());
 		}
 
 		private void ForgotPassword_Clicked(object sender, EventArgs e)
@@ -50,7 +57,22 @@ namespace HeromeApp
 
 		private void SkipLogin_Clicked(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new HomePage());
+			MoveToPageAndResetNavigation(new HomePage());
 		}
+		#endregion
+
+		#region Private methods
+		private void MoveToPageAndResetNavigation(Page nextPage)
+		{
+			Navigation.PushAsync(nextPage);
+			var existingPages = Navigation.NavigationStack.ToList();
+			foreach (var page in existingPages)
+			{
+				if (page == nextPage)
+					continue;
+				Navigation.RemovePage(page);
+			}
+		}
+		#endregion
 	}
 }

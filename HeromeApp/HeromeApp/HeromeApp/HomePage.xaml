@@ -6,13 +6,13 @@
              BackgroundColor="#0A2F5C"
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
-        <StackLayout Padding="40,40,40,50" Spacing="40">
+        <StackLayout Padding="40,40,40,50" Spacing="30">
             <!-- The navigation bar -->
             <StackLayout
                 VerticalOptions="Start"
                 HorizontalOptions="FillAndExpand"
                 Orientation="Vertical"         
-                Spacing="50">
+                Spacing="30">
                 <StackLayout 
                     VerticalOptions="Start"
                     HorizontalOptions="FillAndExpand"
@@ -57,33 +57,37 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Image
+                    <controls:HeromeImage
                         Grid.Column="0" 
                         Grid.Row="0"
+                        CornerRadius="2"
                         Aspect="AspectFill"
                         HorizontalOptions="FillAndExpand" 
                         VerticalOptions="FillAndExpand"
                         Source="panel_nails"/>
-        
-                    <Image
+
+                    <controls:HeromeImage
                         Grid.Column="0" 
-                        Grid.Row="1" 
+                        Grid.Row="1"
+                        CornerRadius="2"
                         Aspect="AspectFill"
                         HorizontalOptions="FillAndExpand" 
                         VerticalOptions="FillAndExpand"
                         Source="panel_hands"/>
 
-                    <Image 
+                    <controls:HeromeImage 
                         Grid.Column="1" 
                         Grid.Row="0" 
+                        CornerRadius="2"
                         Aspect="AspectFill"
                         HorizontalOptions="FillAndExpand" 
                         VerticalOptions="FillAndExpand"
                         Source="panel_cuticles"/>
 
-                    <Image
+                    <controls:HeromeImage
                         Grid.Column="1" 
                         Grid.Row="1" 
+                        CornerRadius="2"
                         Aspect="AspectFill"
                         HorizontalOptions="FillAndExpand" 
                         VerticalOptions="FillAndExpand"

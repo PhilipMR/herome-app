@@ -6,7 +6,7 @@
              BackgroundImage="background_login"
              NavigationPage.HasNavigationBar="false">
     <!-- The main body -->
-    <StackLayout Spacing="15" VerticalOptions="Fill"  Padding="40, 130, 40, 50">
+    <StackLayout Spacing="15" VerticalOptions="Fill"  Padding="40, 200, 40, 50">
         <!-- Login with regular credentials -->
         <StackLayout Spacing="0" VerticalOptions="Start">
             <StackLayout Spacing="-5">
