@@ -36,8 +36,6 @@
                 <Label 
                     VerticalOptions="Start"
                     HorizontalOptions="CenterAndExpand"
-                    Grid.Row="0" 
-                    Grid.Column="0" 
                     Text="Waar kunnen wij je in adviseren?"
                     TextColor="White"
                     FontFamily="{StaticResource OpenSans-Regular}"
@@ -59,6 +57,7 @@
 
                     <!-- Nails panel -->
                     <controls:HeromeImage
+                        x:Name="imgNailsPanel"
                         Grid.Column="0" 
                         Grid.Row="0"
                         CornerRadius="2"
@@ -77,6 +76,7 @@
 
                     <!-- Hands panel -->
                     <controls:HeromeImage
+                        x:Name="imgHandsPanel"
                         Grid.Column="0" 
                         Grid.Row="1"
                         CornerRadius="2"
@@ -95,6 +95,7 @@
 
                     <!-- Cuticles panel -->
                     <controls:HeromeImage 
+                        x:Name="imgCuticlesPanel"
                         Grid.Column="1" 
                         Grid.Row="0" 
                         CornerRadius="2"
@@ -113,6 +114,7 @@
 
                     <!-- Polish panel -->
                     <controls:HeromeImage
+                        x:Name="imgPolishPanel"
                         Grid.Column="1" 
                         Grid.Row="1" 
                         CornerRadius="2"
