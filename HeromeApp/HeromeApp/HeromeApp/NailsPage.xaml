@@ -30,17 +30,34 @@
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"
                 Orientation="Vertical"
-                Spacing="40"
-                BackgroundColor="Red">
+                Spacing="40">
 
                 <Label 
                     VerticalOptions="Start"
                     HorizontalOptions="CenterAndExpand"
-                    Text="Ik heb last van..."
+                    Text="{Binding ActiveQuestion.Caption}"
                     TextColor="White"
                     FontFamily="{StaticResource OpenSans-Regular}"
                     FontSize="Medium"/>
-
+                
+                <!-- Test: for each question, show a label -->
+                <ListView
+                    VerticalOptions="StartAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    ItemsSource="{Binding Questions}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label 
+                                    Text="{Binding Caption}"
+                                    TextColor="White"
+                                    FontFamily="{StaticResource OpenSans-Regular}"
+                                    FontSize="Medium"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                      
                 <Label
                     VerticalOptions="EndAndExpand"
                     HorizontalOptions="CenterAndExpand"
