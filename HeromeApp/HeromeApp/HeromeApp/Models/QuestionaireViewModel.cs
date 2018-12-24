@@ -7,11 +7,18 @@ namespace HeromeApp.Models
 {
 	public class QuestionaireViewModel : INotifyPropertyChanged
 	{
+		#region Answer model
+		public class Answer
+		{
+			public string Caption { get; set; }
+		}
+		#endregion
+
 		#region Question model
 		public class Question
 		{
 			public string Caption { get; set; }
-			public List<string> Options { get; set; }
+			public List<Answer> Answers { get; set; }
 		}
 		#endregion
 
@@ -30,7 +37,9 @@ namespace HeromeApp.Models
 		#region Properties and fields
 		public ObservableCollection<Question> Questions { get; }
 		public ObservableCollection<Result> Results { get; }
-		public Question ActiveQuestion { get; }
+
+		private int _currentQuestionIndex;
+		public Question ActiveQuestion { get { return Questions[_currentQuestionIndex]; } }
 		#endregion
 
 		#region Constructors
@@ -47,9 +56,33 @@ namespace HeromeApp.Models
 			this.Questions = new ObservableCollection<Question>(questions);
 			this.Results = new ObservableCollection<Result>(results);
 
-			this.ActiveQuestion = Questions[0];
+			this._currentQuestionIndex = 0;
 			this.Questions.CollectionChanged += Questions_CollectionChanged;
 			this.Results.CollectionChanged += Results_CollectionChanged;
+		}
+		#endregion
+
+		#region Public methods
+		public void Previous()
+		{
+			if(_currentQuestionIndex > 0)
+			{
+				_currentQuestionIndex--;
+			}
+			PropertyChanged(this, new PropertyChangedEventArgs(nameof(ActiveQuestion)));
+		}
+
+		public void Next()
+		{
+			if((_currentQuestionIndex + 1) < Questions.Count)
+			{
+				_currentQuestionIndex++;
+			} else
+			{
+				System.Console.WriteLine("Finished questionare, showing results...");
+				// Go to results page
+			}
+			PropertyChanged(this, new PropertyChangedEventArgs(nameof(ActiveQuestion)));
 		}
 		#endregion
 

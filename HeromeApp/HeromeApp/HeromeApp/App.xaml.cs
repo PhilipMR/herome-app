@@ -10,7 +10,7 @@ namespace HeromeApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new NavigationPage(new NailsPage());
         }
 
         protected override void OnStart()

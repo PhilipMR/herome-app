@@ -18,22 +18,21 @@ namespace HeromeApp
 				new Question()
 				{
 					Caption = "Ik heb last van...",
-					Options = new List<string>
+					Answers = new List<Answer>
 					{
-						"vastzittende nagelriemen",
-						"droge nagelriemen",
-						"nagelriemvelletjes"
+						new Answer { Caption = "vastzittende nagelriemen" },
+						new Answer { Caption = "droge nagelriemen" },
+						new Answer { Caption = "nagelriemvelletjes" }
 					}
 				},
 				new Question()
 				{
 					Caption = "En ik heb ook nog eens last van...",
-					Options = new List<string>
+					Answers = new List<Answer>
 					{
-						"het weer",
-						"iedereen",
-						"alles",
-						"niks"
+						new Answer { Caption = "het weer" },
+						new Answer { Caption = "alles" },
+						new Answer { Caption = "iedereen" }
 					}
 				}
 			};
@@ -50,7 +49,14 @@ namespace HeromeApp
 				}
 			};
 
+			lvAnswers.ItemTapped += LvAnswers_ItemTapped;
 			this.BindingContext = new QuestionaireViewModel(questions, results);
+		}
+
+		private void LvAnswers_ItemTapped(object sender, ItemTappedEventArgs e)
+		{
+			QuestionaireViewModel model = this.BindingContext as QuestionaireViewModel;
+			model.Next();
 		}
 	}
 }

@@ -38,21 +38,23 @@
                     Text="{Binding ActiveQuestion.Caption}"
                     TextColor="White"
                     FontFamily="{StaticResource OpenSans-Regular}"
-                    FontSize="Medium"/>
+                    FontSize="Small"/>
                 
                 <!-- Test: for each question, show a label -->
                 <ListView
+                    x:Name="lvAnswers"
                     VerticalOptions="StartAndExpand"
                     HorizontalOptions="CenterAndExpand"
-                    ItemsSource="{Binding Questions}">
+                    SeparatorVisibility="None"
+                    SeparatorColor="Transparent"
+                    
+                    ItemsSource="{Binding ActiveQuestion.Answers}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Label 
-                                    Text="{Binding Caption}"
-                                    TextColor="White"
-                                    FontFamily="{StaticResource OpenSans-Regular}"
-                                    FontSize="Medium"/>
+                                <StackLayout VerticalOptions="FillAndExpand" Margin="0,5,0,5">
+                                    <controls:HeromeAnswerBox Caption="{Binding Caption}" VerticalOptions="FillAndExpand"/>
+                                </StackLayout>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -61,10 +63,10 @@
                 <Label
                     VerticalOptions="EndAndExpand"
                     HorizontalOptions="CenterAndExpand"
-                    Text="Meer info over Nagels"
+                    Text="Meer info over Nageladvies"
                     TextColor="White"
                     FontFamily="{StaticResource OpenSans-Regular}"
-                    FontSize="Medium"/>
+                    FontSize="Small"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

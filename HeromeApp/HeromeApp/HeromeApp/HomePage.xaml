@@ -41,9 +41,7 @@
                     FontFamily="{StaticResource OpenSans-Regular}"
                     FontSize="Medium"/>
    
-                <Grid 
-                    Grid.Row="1" 
-                    Grid.Column="0" 
+                <Grid
                     HorizontalOptions="FillAndExpand" 
                     VerticalOptions="FillAndExpand">
                     <Grid.RowDefinitions>
