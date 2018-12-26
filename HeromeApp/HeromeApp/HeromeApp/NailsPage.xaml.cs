@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using static HeromeApp.Models.QuestionaireViewModel;
+using static HeromeApp.Models.HeromeQuestionaireModel;
 
 namespace HeromeApp
 {
@@ -43,20 +43,12 @@ namespace HeromeApp
 				{
 					Options = new List<int>
 					{
-						0
+						0, 0
 					},
 					Url = "https://herome.nl/xyz"
 				}
 			};
-
-			lvAnswers.ItemTapped += LvAnswers_ItemTapped;
-			this.BindingContext = new QuestionaireViewModel(questions, results);
-		}
-
-		private void LvAnswers_ItemTapped(object sender, ItemTappedEventArgs e)
-		{
-			QuestionaireViewModel model = this.BindingContext as QuestionaireViewModel;
-			model.Next();
+			this.questionaire.BindingContext = new HeromeQuestionaireModel(questions, results, "Meer info over Nageladvies");
 		}
 	}
 }

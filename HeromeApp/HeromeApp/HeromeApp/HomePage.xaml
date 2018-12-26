@@ -6,19 +6,16 @@
              BackgroundColor="#0A2F5C"
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
-        <StackLayout Padding="40,40,40,50" Spacing="30">
+        <StackLayout Padding="30,40,30,40" Spacing="50">
             <!-- The navigation bar -->
             <StackLayout
                 VerticalOptions="Start"
                 HorizontalOptions="FillAndExpand"
                 Orientation="Vertical"         
                 Spacing="30">
-                <StackLayout 
-                    VerticalOptions="Start"
-                    HorizontalOptions="FillAndExpand"
-                    Orientation="Horizontal">
-                    <Image HorizontalOptions="EndAndExpand" Source="icon_menu" HeightRequest="20"/>
-                </StackLayout>
+                <Image HorizontalOptions="EndAndExpand" 
+                       Source="icon_menu" 
+                       HeightRequest="20"/>
                 <BoxView
                     VerticalOptions="Start"
                     HorizontalOptions="FillAndExpand"
@@ -31,7 +28,7 @@
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"
                 Orientation="Vertical"
-                Spacing="40">
+                Spacing="50">
 
                 <Label 
                     VerticalOptions="Start"
@@ -39,11 +36,13 @@
                     Text="Waar kunnen wij je in adviseren?"
                     TextColor="White"
                     FontFamily="{StaticResource OpenSans-Regular}"
-                    FontSize="Medium"/>
+                    FontSize="Small"/>
    
                 <Grid
-                    HorizontalOptions="FillAndExpand" 
-                    VerticalOptions="FillAndExpand">
+                    HorizontalOptions="Fill" 
+                    VerticalOptions="FillAndExpand"
+                    RowSpacing="10"
+                    ColumnSpacing="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:HeromeApp.Controls"
+             xmlns:views="clr-namespace:HeromeApp.Views"
+             x:Class="HeromeApp.Views.HeromeQuestionaireView">
+    <ContentView.Content>
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Orientation="Vertical"
+            Spacing="30">
+
+            <Label 
+                VerticalOptions="Start"
+                HorizontalOptions="CenterAndExpand"
+                Text="{Binding ActiveQuestion.Caption}"
+                TextColor="White"
+                FontFamily="{StaticResource OpenSans-Regular}"
+                FontSize="Small"/>
+                
+            <controls:HeromeListView
+                x:Name="lvAnswers"
+                ScrollingEnabled="False"
+                VerticalOptions="Fill"
+                HorizontalOptions="CenterAndExpand"
+                SeparatorVisibility="None"
+                SeparatorColor="Transparent"
+                ItemsSource="{Binding ActiveQuestion.Answers}"
+                RowHeight="70">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <views:HeromeQuestionaireViewCell Caption="{Binding Caption}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </controls:HeromeListView>
+
+            <Label
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                Text="{Binding Footer}"
+                TextColor="White"
+                FontFamily="{StaticResource OpenSans-Regular}"
+                FontSize="Small"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

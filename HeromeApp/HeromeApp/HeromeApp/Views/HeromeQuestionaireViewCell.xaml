@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<controls:HeromeViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:HeromeApp.Controls"
+             x:Class="HeromeApp.Views.HeromeQuestionaireViewCell">
+  <ViewCell.View>
+        <StackLayout VerticalOptions="FillAndExpand" Margin="0,7,0,7">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- The boxview background -->
+                <controls:HeromeBoxView 
+                    x:Name="boxBackground"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    CornerRadius="5"/>
+
+                <!-- The answer box items -->
+                <StackLayout             
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Orientation="Horizontal"
+                    Padding="5">
+                    
+                    <Image 
+                        x:Name="imgAnswer"
+                        Source="answer_blank"
+                        Aspect="AspectFit"
+                        HorizontalOptions="Start"
+                        VerticalOptions="FillAndExpand"
+                        Margin="5"/>
+                    
+                    <Label Text="{Binding Caption}"
+                        TextColor="White"
+                        FontFamily="{StaticResource OpenSans-Regular}"
+                        HorizontalOptions="Start"
+                        VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ViewCell.View>
+</controls:HeromeViewCell>

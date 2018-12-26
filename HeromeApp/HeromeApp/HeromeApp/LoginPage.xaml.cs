@@ -10,7 +10,6 @@ namespace HeromeApp
 		public LoginPage()
         {
             InitializeComponent();
-
 			this.imgFacebookIcon.GestureRecognizers.Add(new TapGestureRecognizer
 			{
 				Command = new Command(() => LoginFacebook_Clicked()),

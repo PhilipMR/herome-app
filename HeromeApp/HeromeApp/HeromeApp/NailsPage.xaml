@@ -2,22 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HeromeApp.NailsPage"
-             xmlns:controls="clr-namespace:HeromeApp.Controls"
-             BackgroundColor="#0A2F5C">
+             xmlns:views="clr-namespace:HeromeApp.Views"
+             BackgroundColor="#0A2F5C"
+             NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
-        <StackLayout Padding="40,40,40,50" Spacing="30">
+        <StackLayout Padding="30,40,30,40" Spacing="50">
             <!-- The navigation bar -->
             <StackLayout
                 VerticalOptions="Start"
                 HorizontalOptions="FillAndExpand"
                 Orientation="Vertical"         
                 Spacing="30">
-                <StackLayout 
-                    VerticalOptions="Start"
-                    HorizontalOptions="FillAndExpand"
-                    Orientation="Horizontal">
-                    <Image HorizontalOptions="EndAndExpand" Source="icon_menu" HeightRequest="20"/>
-                </StackLayout>
+                <Image HorizontalOptions="EndAndExpand" 
+                       Source="icon_menu" 
+                       HeightRequest="20"/>
                 <BoxView
                     VerticalOptions="Start"
                     HorizontalOptions="FillAndExpand"
@@ -25,49 +23,13 @@
                     HeightRequest="1"/>
             </StackLayout>
 
-            <!-- The body -->
-            <StackLayout
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"
-                Orientation="Vertical"
-                Spacing="40">
+            <!-- The questionaire -->       
+            <views:HeromeQuestionaireView 
+                x:Name="questionaire"
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="FillAndExpand"/>
 
-                <Label 
-                    VerticalOptions="Start"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="{Binding ActiveQuestion.Caption}"
-                    TextColor="White"
-                    FontFamily="{StaticResource OpenSans-Regular}"
-                    FontSize="Small"/>
-                
-                <!-- Test: for each question, show a label -->
-                <ListView
-                    x:Name="lvAnswers"
-                    VerticalOptions="StartAndExpand"
-                    HorizontalOptions="CenterAndExpand"
-                    SeparatorVisibility="None"
-                    SeparatorColor="Transparent"
-                    
-                    ItemsSource="{Binding ActiveQuestion.Answers}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout VerticalOptions="FillAndExpand" Margin="0,5,0,5">
-                                    <controls:HeromeAnswerBox Caption="{Binding Caption}" VerticalOptions="FillAndExpand"/>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                      
-                <Label
-                    VerticalOptions="EndAndExpand"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Meer info over Nageladvies"
-                    TextColor="White"
-                    FontFamily="{StaticResource OpenSans-Regular}"
-                    FontSize="Small"/>
-            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
