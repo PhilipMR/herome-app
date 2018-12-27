@@ -2,6 +2,8 @@
 using Android.Content.PM;
 using Android.Views;
 using Android.OS;
+using Xamarin.Facebook;
+using Xamarin.Facebook.AppEvents;
 
 namespace HeromeApp.Droid
 {
@@ -20,7 +22,11 @@ namespace HeromeApp.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
-            base.OnCreate(savedInstanceState);
+			base.OnCreate(savedInstanceState);
+
+			FacebookSdk.SdkInitialize(this.ApplicationContext);
+			//AppEventsLogger.ActivateApp(this);
+
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
