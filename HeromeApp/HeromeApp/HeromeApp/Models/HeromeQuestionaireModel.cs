@@ -76,26 +76,33 @@ namespace HeromeApp.Models
 		#endregion
 
 		#region Public methods
+		public bool HasPrevious()
+		{
+			return _currentQuestionIndex > 0;
+		}
+
+		public bool HasNext()
+		{
+			return (_currentQuestionIndex + 1) < Questions.Count;
+		}
+
 		public void Previous()
 		{
-			if(_currentQuestionIndex > 0)
-			{
-				_currentQuestionIndex--;
-			}
+			if (!HasPrevious()) return;
+			_currentQuestionIndex--;
 			PropertyChanged(this, new PropertyChangedEventArgs(nameof(ActiveQuestion)));
 		}
 
 		public void Next()
 		{
-			if((_currentQuestionIndex + 1) < Questions.Count)
-			{
-				_currentQuestionIndex++;
-			} else
-			{
-				System.Console.WriteLine("Finished questionare, showing results...");
-				// Go to results page
-			}
+			if (!HasNext()) return;
+			_currentQuestionIndex++;
 			PropertyChanged(this, new PropertyChangedEventArgs(nameof(ActiveQuestion)));
+		}
+
+		public string GetResultingUrl()
+		{
+			return "https://www.google.com";
 		}
 		#endregion
 

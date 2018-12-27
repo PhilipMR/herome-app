@@ -17,12 +17,16 @@ namespace HeromeApp.Views
 
 		private async void LvAnswers_ItemSelected(object sender, SelectedItemChangedEventArgs e)
 		{
-			var selectedAnswer = e.SelectedItem as HeromeQuestionaireModel.Answer;
-			// Wait 1 second...
-			await Task.Delay(TimeSpan.FromSeconds(0.1));
-			// Go to next question
 			var model = this.BindingContext as HeromeQuestionaireModel;
-			model.Next();
+			var selectedAnswer = e.SelectedItem as HeromeQuestionaireModel.Answer;
+			if (model.HasNext())
+			{
+				//await Task.Delay(TimeSpan.FromSeconds(0.05));
+				model.Next();
+			} else
+			{
+				await Navigation.PushAsync(new ProductPage());
+			}
 		}
 	}
 }
