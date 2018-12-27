@@ -13,21 +13,23 @@ namespace HeromeApp.Views
 		public HeromeQuestionaireView()
 		{
 			InitializeComponent ();
-			lvAnswers.ItemSelected += LvAnswers_ItemSelected;
+			lvAnswers.ItemTapped += LvAnswers_ItemTapped;
 		}
 
-		private async void LvAnswers_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+		private async void LvAnswers_ItemTapped(object sender, ItemTappedEventArgs e)
 		{
 			var model = this.BindingContext as HeromeQuestionaireModel;
-			var selectedAnswer = e.SelectedItem as HeromeQuestionaireModel.Answer;
+			var selectedAnswer = e.Item as HeromeQuestionaireModel.Answer;
 			if (model.HasNext())
 			{
 				await Task.Delay(TimeSpan.FromSeconds(0.1));
 				model.Next();
-			} else
+			}
+			else
 			{
 				await Navigation.PushAsync(new ProductPage());
 			}
+			lvAnswers.SelectedItem = null;
 		}
 	}
 }

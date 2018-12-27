@@ -51,5 +51,19 @@ namespace HeromeApp.Pages
 			};
 			this.questionaire.BindingContext = new HeromeQuestionaireModel(questions, results, "Meer info over Handen");
 		}
+
+		protected override bool OnBackButtonPressed()
+		{
+			var model = this.questionaire.BindingContext as HeromeQuestionaireModel;
+			if (model.HasPrevious())
+			{
+				model.Previous();
+				return true;
+			}
+			else
+			{
+				return base.OnBackButtonPressed();
+			}
+		}
 	}
 }
