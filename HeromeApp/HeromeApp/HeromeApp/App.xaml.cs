@@ -10,9 +10,11 @@ namespace HeromeApp
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new LoginPage());
-        }
+			MainPage = new NavigationPage(new LoginPage())
+			{
+				BackgroundColor = Color.FromHex("#0A2F5C")
+			};
+		}
 
         protected override void OnStart()
         {
