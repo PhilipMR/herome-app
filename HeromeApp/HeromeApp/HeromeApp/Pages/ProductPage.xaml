@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:HeromeApp.Controls"
-             x:Class="HeromeApp.ProductPage"
+             x:Class="HeromeApp.Pages.ProductPage"
              BackgroundColor="#0A2F5C"
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>

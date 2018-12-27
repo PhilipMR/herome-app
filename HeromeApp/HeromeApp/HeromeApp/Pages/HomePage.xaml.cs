@@ -1,7 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace HeromeApp
+namespace HeromeApp.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class HomePage : ContentPage
@@ -41,14 +41,17 @@ namespace HeromeApp
 
 		private void HandsPanel_Clicked()
 		{
+			Navigation.PushAsync(new HandsPage());
 		}
 
 		private void CuticlesPanel_Clicked()
 		{
+			Navigation.PushAsync(new CuticlesPage());
 		}
 
 		private void PolishPanel_Clicked()
 		{
+			Navigation.PushAsync(new PolishPage());
 		}
 		#endregion
 	}

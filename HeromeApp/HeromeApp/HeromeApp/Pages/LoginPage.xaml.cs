@@ -2,7 +2,7 @@
 using System.Linq;
 using Xamarin.Forms;
 
-namespace HeromeApp
+namespace HeromeApp.Pages
 {
     public partial class LoginPage : ContentPage
     {

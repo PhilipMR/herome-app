@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using HeromeApp.Pages;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]

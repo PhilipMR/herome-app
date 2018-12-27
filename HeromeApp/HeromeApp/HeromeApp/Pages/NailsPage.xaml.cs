@@ -4,7 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using static HeromeApp.Models.HeromeQuestionaireModel;
 
-namespace HeromeApp
+namespace HeromeApp.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class NailsPage : ContentPage

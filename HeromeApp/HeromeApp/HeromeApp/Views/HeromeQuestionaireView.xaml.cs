@@ -1,4 +1,5 @@
 ﻿using HeromeApp.Models;
+using HeromeApp.Pages;
 using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -21,7 +22,7 @@ namespace HeromeApp.Views
 			var selectedAnswer = e.SelectedItem as HeromeQuestionaireModel.Answer;
 			if (model.HasNext())
 			{
-				//await Task.Delay(TimeSpan.FromSeconds(0.05));
+				await Task.Delay(TimeSpan.FromSeconds(0.1));
 				model.Next();
 			} else
 			{
