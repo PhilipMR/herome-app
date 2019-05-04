@@ -48,7 +48,7 @@ namespace HeromeApp.Pages
 					Url = "https://herome.nl/xyz"
 				}
 			};
-			this.questionaire.BindingContext = new HeromeQuestionaireModel(questions, results, "Meer info over Nageladvies");
+			this.questionaire.BindingContext = new HeromeQuestionaireModel(questions, results);
 		}
 
 		protected override bool OnBackButtonPressed()

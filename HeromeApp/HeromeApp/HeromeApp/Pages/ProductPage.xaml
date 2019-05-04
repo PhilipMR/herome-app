@@ -3,19 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:HeromeApp.Controls"
              x:Class="HeromeApp.Pages.ProductPage"
-             BackgroundColor="#0A2F5C"
+             BackgroundImage="background_nails"
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
-        <StackLayout Padding="30,40,30,40" Spacing="50">
+        <StackLayout Padding="30,10,30,40" Spacing="50">
             <!-- The navigation bar -->
             <StackLayout
                 VerticalOptions="Start"
                 HorizontalOptions="FillAndExpand"
                 Orientation="Vertical"         
-                Spacing="30">
-                <Image HorizontalOptions="EndAndExpand" 
-                       Source="icon_menu" 
-                       HeightRequest="20"/>
+                Spacing="20">
+                <StackLayout 
+                    Orientation="Horizontal" 
+                    HorizontalOptions="Fill" 
+                    VerticalOptions="Fill">
+                    <Image HorizontalOptions="CenterAndExpand"
+                           Source="logo_white"
+                           HeightRequest="50"/>
+                    <Image HorizontalOptions="End" 
+                           VerticalOptions="End"
+                        Source="icon_menu" 
+                        HeightRequest="20"/>
+                </StackLayout>
+
                 <BoxView
                     VerticalOptions="Start"
                     HorizontalOptions="FillAndExpand"
@@ -57,7 +67,7 @@
                         FontFamily="{StaticResource OpenSans-Regular}"
                         TextColor="White"
                         Text="Wij adviseren onderstaande producten voor zachte en verzorgde nagelriemen."
-                        Margin="5"/>
+                        Margin="15"/>
                 </Grid>
                 
 

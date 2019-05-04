@@ -63,8 +63,6 @@ namespace HeromeApp.Droid.Renderers
 
 			return base.DispatchTouchEvent(e);
 		}
-		
-
 		#endregion
 	}
 }

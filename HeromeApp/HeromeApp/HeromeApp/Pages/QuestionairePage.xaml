@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HeromeApp.Pages.NailsPage"
+             x:Class="HeromeApp.Pages.QuestionairePage"
              xmlns:views="clr-namespace:HeromeApp.Views"
              BackgroundImage="background_nails"
              NavigationPage.HasNavigationBar="false">
@@ -25,7 +25,7 @@
                         Source="icon_menu" 
                         HeightRequest="20"/>
                 </StackLayout>
-
+        
                 <BoxView
                     VerticalOptions="Start"
                     HorizontalOptions="FillAndExpand"
@@ -38,6 +38,15 @@
                 x:Name="questionaire"
                 HorizontalOptions="FillAndExpand" 
                 VerticalOptions="FillAndExpand"/>
+
+            <Label
+                x:Name="lblFooter"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                Text=""
+                TextColor="White"
+                FontFamily="{StaticResource OpenSans-Regular}"
+                FontSize="Small"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

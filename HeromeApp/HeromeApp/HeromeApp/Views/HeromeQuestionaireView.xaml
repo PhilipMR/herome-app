@@ -18,7 +18,7 @@
                 TextColor="White"
                 FontFamily="{StaticResource OpenSans-Regular}"
                 FontSize="Small"/>
-                
+
             <controls:HeromeListView
                 x:Name="lvAnswers"
                 ScrollingEnabled="False"
@@ -34,14 +34,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </controls:HeromeListView>
-
-            <Label
-                VerticalOptions="EndAndExpand"
-                HorizontalOptions="CenterAndExpand"
-                Text="{Binding Footer}"
-                TextColor="White"
-                FontFamily="{StaticResource OpenSans-Regular}"
-                FontSize="Small"/>
         </StackLayout>
     </ContentView.Content>
 </ContentView>

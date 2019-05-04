@@ -38,24 +38,12 @@ namespace HeromeApp.Models
 		public ObservableCollection<Question> Questions { get; }
 		public ObservableCollection<Result> Results { get; }
 
-		private string _footer;
-		public string Footer
-		{
-			get { return _footer; }
-			set
-			{
-				if (value.Equals(_footer)) return;
-				_footer = value;
-				this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(_footer)));
-			}
-		}
-
 		private int _currentQuestionIndex;
 		public Question ActiveQuestion { get { return Questions[_currentQuestionIndex]; } }
 		#endregion
 
 		#region Constructors
-		public HeromeQuestionaireModel(List<Question> questions, List<Result> results, string footer)
+		public HeromeQuestionaireModel(List<Question> questions, List<Result> results)
 		{
 			if (questions.Count == 0)
 			{
@@ -67,7 +55,6 @@ namespace HeromeApp.Models
 			}
 			this.Questions = new ObservableCollection<Question>(questions);
 			this.Results = new ObservableCollection<Result>(results);
-			this.Footer = footer;
 
 			this._currentQuestionIndex = 0;
 			this.Questions.CollectionChanged += Questions_CollectionChanged;
