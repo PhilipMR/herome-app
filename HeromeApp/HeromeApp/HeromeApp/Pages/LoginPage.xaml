@@ -51,6 +51,7 @@
                         TextColor="White"
                         HeightRequest="40"
                         FontFamily="{StaticResource OpenSans-Bold}"
+                        FontSize="Medium"
                         BackgroundColor="#80D6F1"
                         Clicked="LoginButton_Clicked"
                         CornerRadius="3"/>
@@ -59,6 +60,7 @@
                         TextColor="White"
                         HeightRequest="40"
                         FontFamily="{StaticResource OpenSans-Bold}"
+                        FontSize="Medium"
                         BackgroundColor="#012B65"
                         Clicked="RegisterButton_Clicked"
                         CornerRadius="3"/>
@@ -66,7 +68,7 @@
                         HorizontalOptions="CenterAndExpand"
                         Text="Wachtwoord vergeten?"
                         TextColor="White"
-                        FontFamily="{StaticResource OpenSans-Light}"
+                        FontFamily="{StaticResource OpenSans-Regular}"
                         FontSize="Micro"
                         BackgroundColor="Transparent"
                         Clicked="ForgotPassword_Clicked"/>
@@ -80,7 +82,7 @@
                         HorizontalOptions="CenterAndExpand"
                         Text="Inloggen via Social Media"
                         TextColor="White"
-                        FontFamily="{StaticResource OpenSans-Light}"
+                        FontFamily="{StaticResource OpenSans-Regular}"
                         FontSize="Micro"/>
                     <StackLayout HorizontalOptions="Fill"  Orientation="Horizontal" Spacing="5">
                         <BoxView 

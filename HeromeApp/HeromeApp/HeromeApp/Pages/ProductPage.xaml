@@ -64,7 +64,7 @@
                         Grid.Row="0"
                         Grid.Column="0"
                         FontSize="Small"
-                        FontFamily="{StaticResource OpenSans-Regular}"
+                        FontFamily="{StaticResource OpenSans-Bold}"
                         TextColor="White"
                         Text="Wij adviseren onderstaande producten voor zachte en verzorgde nagelriemen."
                         Margin="15"/>

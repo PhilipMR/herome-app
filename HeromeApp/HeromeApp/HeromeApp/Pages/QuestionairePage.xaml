@@ -45,7 +45,7 @@
                 HorizontalOptions="CenterAndExpand"
                 Text=""
                 TextColor="White"
-                FontFamily="{StaticResource OpenSans-Regular}"
+                FontFamily="{StaticResource OpenSans-Bold}"
                 FontSize="Small"/>
         </StackLayout>
     </ContentPage.Content>
