@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HeromeApp.Pages.ColorPickerPage"
+             BackgroundImage="background_nails"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout Padding="30,10,30,40" Spacing="20">
+            <!-- The navigation bar -->
+            <StackLayout
+                VerticalOptions="Start"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Vertical"         
+                Spacing="20">
+                <StackLayout 
+                    Orientation="Horizontal" 
+                    HorizontalOptions="Fill" 
+                    VerticalOptions="Fill">
+                    <Image HorizontalOptions="CenterAndExpand"
+                           Source="logo_white"
+                           HeightRequest="50"/>
+                    <Image HorizontalOptions="End" 
+                           VerticalOptions="End"
+                        Source="icon_menu" 
+                        HeightRequest="20"/>
+                </StackLayout>
+
+                <BoxView
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="White"
+                    HeightRequest="1"/>
+            </StackLayout>
+
+            <!-- The body -->
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Orientation="Vertical">
+
+                <Label 
+                    VerticalOptions="Start"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Welkom bij de nagellak colorpicker"
+                    LineBreakMode="WordWrap"
+                    TextColor="White"
+                    FontFamily="{StaticResource OpenSans-Regular}"
+                    FontSize="Small"/>
+                <Label 
+                    VerticalOptions="Start"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Maak hieronder uw keuze."
+                    TextColor="White"
+                    FontFamily="{StaticResource OpenSans-Regular}"
+                    FontSize="Small"
+                    TranslationY="-10"/>
+
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="StartAndExpand"
+                    HeightRequest="70"
+                    Spacing="20">
+                    <Image HorizontalOptions="FillAndExpand" Source="icon_skintype"></Image>
+                    <Image HorizontalOptions="FillAndExpand" Source="icon_nail_length"></Image>
+                    <Image HorizontalOptions="FillAndExpand" Source="icon_nail_skintype"></Image>
+                    <Image HorizontalOptions="FillAndExpand" Source="icon_nail_color"></Image>
+                </StackLayout>
+                    
+            </StackLayout>
+
+            <Grid
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image 
+                    Grid.Row="0" 
+                    Grid.Column="0"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="EndAndExpand"
+                    Scale="2"
+                    TranslationX="-120"
+                    TranslationY="100"
+                    Rotation="55"
+                    Source="hand"
+                    />
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

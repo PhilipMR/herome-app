@@ -33,7 +33,7 @@
                         FontFamily="{StaticResource OpenSans-Light}"
                         FontSize="Small"
                         Image="icon_email"
-                        ImageWidth="25"
+                        ImageWidth="30"
                         ImageHeight="20"/>
                     <controls:HeromeImageEntry 
                         x:Name="txtPassword"
@@ -45,6 +45,7 @@
                         Image="icon_lock"
                         ImageWidth="25"
                         ImageHeight="30"
+                        ImageSpacing="20"
                         IsPassword="True"/>
                     <controls:HeromeButton 
                         Text="Inloggen"

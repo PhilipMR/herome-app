@@ -81,7 +81,7 @@ namespace HeromeApp.Pages
 		{
             var model = CreateDummyQuestionaire();
             var page = new QuestionairePage(model, "Meer info over Nageladvies");
-			Navigation.PushAsync(page);
+            Navigation.PushAsync(page);
 		}
 
 		private void HandsPanel_Clicked()

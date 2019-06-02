@@ -86,11 +86,6 @@ namespace HeromeApp.Models
 			_currentQuestionIndex++;
 			PropertyChanged(this, new PropertyChangedEventArgs(nameof(ActiveQuestion)));
 		}
-
-		public string GetResultingUrl()
-		{
-			return "https://www.google.com";
-		}
 		#endregion
 
 		#region Control events

@@ -54,16 +54,10 @@ namespace HeromeApp.Droid.Renderers
 			var editText = this.Control;
 			if (!string.IsNullOrEmpty(entry.Image)) {
 				var drawable = GetDrawable(entry, entry.Image);
-				drawable.OffsetY = CalculateDesiredDrawableOffsetY(editText, drawable, 10);
+                drawable.Gravity = Android.Views.GravityFlags.CenterVertical;
 				editText.SetCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
 			}
-			editText.CompoundDrawablePadding = 40;
-			editText.SetPadding(
-				editText.PaddingLeft, 
-				editText.PaddingTop + 20, 
-				editText.PaddingRight, 
-				editText.PaddingBottom
-			);
+			editText.CompoundDrawablePadding = 40 + entry.ImageSpacing;
 			editText.Background.SetColorFilter(entry.LineColor.ToAndroid(), PorterDuff.Mode.SrcAtop);
 		}
 		#endregion
