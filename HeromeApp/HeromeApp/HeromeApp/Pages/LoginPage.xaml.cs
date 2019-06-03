@@ -1,10 +1,11 @@
-﻿using System;
+﻿using FormsControls.Base;
+using System;
 using System.Linq;
 using Xamarin.Forms;
 
 namespace HeromeApp.Pages
 {
-    public partial class LoginPage : ContentPage
+    public partial class LoginPage : AnimationPage
     {
 		#region Constructors
 		public LoginPage()
@@ -28,9 +29,13 @@ namespace HeromeApp.Pages
         {
 			Console.WriteLine("Login button clicked!");
 
-			// NOTE: Should be MoveToPageAndResetNavigation(new HomePage()) like the other buttons.
-			//		 We don't clear the navigation stack here right now now because it's useful for debugging.
-			Navigation.PushAsync(new HomePage());
+            var slideAnimation = new SlidePageAnimation() { Duration = AnimationDuration.Short, Subtype = AnimationSubtype.FromRight };
+            Navigation.PushAsync(new HomePage() { PageAnimation = slideAnimation });
+
+
+            // NOTE: Should be MoveToPageAndResetNavigation(new HomePage()) like the other buttons.
+            //		 We don't clear the navigation stack here right now now because it's useful for debugging.
+            //Navigation.PushAsync(new HomePage());
 		}
 
 		private void RegisterButton_Clicked(object sender, EventArgs e)

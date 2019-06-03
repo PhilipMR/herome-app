@@ -1,4 +1,5 @@
-﻿using HeromeApp.Models;
+﻿using FormsControls.Base;
+using HeromeApp.Models;
 using HeromeApp.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -26,7 +27,8 @@ namespace HeromeApp.Views
 			}
 			else
 			{
-                await Navigation.PushAsync(new ProductPage());
+                var fadeAnimation = new FadePageAnimation() { Duration = AnimationDuration.Short };
+                await Navigation.PushAsync(new ProductPage() { PageAnimation = fadeAnimation });
 			}
 			lvAnswers.SelectedItem = null;
 		}

@@ -1,4 +1,5 @@
-﻿using HeromeApp.Models;
+﻿using FormsControls.Base;
+using HeromeApp.Models;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -7,7 +8,7 @@ using static HeromeApp.Models.HeromeQuestionaireModel;
 namespace HeromeApp.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class HomePage : ContentPage
+	public partial class HomePage : AnimationPage
 	{
 		#region Constructors
 		public HomePage ()
@@ -80,28 +81,32 @@ namespace HeromeApp.Pages
 		private void NailsPanel_Clicked()
 		{
             var model = CreateDummyQuestionaire();
-            var page = new QuestionairePage(model, "Meer info over Nageladvies");
+            var fadeAnimation = new FadePageAnimation() { Duration = AnimationDuration.Short };
+            var page = new QuestionairePage(model, "Meer info over Nageladvies") { PageAnimation = fadeAnimation };
             Navigation.PushAsync(page);
 		}
 
 		private void HandsPanel_Clicked()
 		{
             var model = CreateDummyQuestionaire();
-            var page = new QuestionairePage(model, "Meer info over Handadvies");
+            var fadeAnimation = new FadePageAnimation() { Duration = AnimationDuration.Short };
+            var page = new QuestionairePage(model, "Meer info over Handadvies") { PageAnimation = fadeAnimation };
             Navigation.PushAsync(page);
         }
 
 		private void CuticlesPanel_Clicked()
         {
             var model = CreateDummyQuestionaire();
-            var page = new QuestionairePage(model, "Meer info over Nagelriemadvies");
+            var fadeAnimation = new FadePageAnimation() { Duration = AnimationDuration.Short };
+            var page = new QuestionairePage(model, "Meer info over Nagelriemadvies") { PageAnimation = fadeAnimation };
             Navigation.PushAsync(page);
         }
 
 		private void PolishPanel_Clicked()
         {
             var model = CreateDummyQuestionaire();
-            var page = new QuestionairePage(model, "Meer info over Nagellakdvies");
+            var fadeAnimation = new FadePageAnimation() { Duration = AnimationDuration.Short };
+            var page = new QuestionairePage(model, "Meer info over Nagellakdvies") { PageAnimation = fadeAnimation };
             Navigation.PushAsync(page);
         }
 		#endregion

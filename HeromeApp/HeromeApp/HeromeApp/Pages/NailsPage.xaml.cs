@@ -1,4 +1,5 @@
-﻿using HeromeApp.Models;
+﻿using FormsControls.Base;
+using HeromeApp.Models;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -7,7 +8,7 @@ using static HeromeApp.Models.HeromeQuestionaireModel;
 namespace HeromeApp.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class NailsPage : ContentPage
+	public partial class NailsPage : AnimationPage
 	{
 		public NailsPage()
 		{

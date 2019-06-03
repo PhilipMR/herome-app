@@ -1,4 +1,5 @@
-﻿using HeromeApp.Models;
+﻿using FormsControls.Base;
+using HeromeApp.Models;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -6,7 +7,7 @@ using Xamarin.Forms.Xaml;
 namespace HeromeApp.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class QuestionairePage : ContentPage
+    public partial class QuestionairePage : AnimationPage
     {
         private bool _isFading = false;
 

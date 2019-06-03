@@ -1,4 +1,5 @@
-﻿using HeromeApp.Pages;
+﻿using FormsControls.Base;
+using HeromeApp.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,9 @@ namespace HeromeApp
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new LoginPage());
+
+            var fadeAnimation = new FadePageAnimation() { Duration = AnimationDuration.Short };
+            MainPage = new AnimationNavigationPage(new LoginPage() { PageAnimation = fadeAnimation });
 		}
 
         protected override void OnStart()

@@ -30,6 +30,7 @@ namespace HeromeApp.Droid
 
             FacebookSdk.SdkInitialize(this.ApplicationContext);
             //AppEventsLogger.ActivateApp(this);
+            FormsControls.Droid.Main.Init(this); // Initializes AnimationNavigationPage
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             if (ContextCompat.CheckSelfPermission(this, Android.Manifest.Permission.Camera) != Permission.Granted)
