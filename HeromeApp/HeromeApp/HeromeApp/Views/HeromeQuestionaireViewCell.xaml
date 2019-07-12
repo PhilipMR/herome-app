@@ -14,7 +14,7 @@
                 </Grid.ColumnDefinitions>
 
                 <!-- The boxview background -->
-                <controls:HeromeBoxView 
+                <BoxView 
                     x:Name="boxBackground"
                     Grid.Row="0"
                     Grid.Column="0"

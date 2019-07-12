@@ -11,7 +11,6 @@ namespace HeromeApp
         public App()
         {
             InitializeComponent();
-
             var fadeAnimation = new FadePageAnimation() { Duration = AnimationDuration.Short };
             MainPage = new AnimationNavigationPage(new LoginPage() { PageAnimation = fadeAnimation });
 		}

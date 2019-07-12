@@ -56,7 +56,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <controls:HeromeBoxView 
+                    <BoxView 
                         Grid.Row="0"
                         Grid.Column="0"
                         BackgroundColor="#6fb9d6"

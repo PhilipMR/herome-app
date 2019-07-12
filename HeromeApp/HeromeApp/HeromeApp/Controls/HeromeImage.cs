@@ -14,7 +14,7 @@ namespace HeromeApp.Controls
 
 		#region Bindable properties
 		public static readonly BindableProperty CornerRadiusProperty =
-			BindableProperty.Create(nameof(CornerRadius), typeof(double), typeof(HeromeBoxView), 0.0);
+			BindableProperty.Create(nameof(CornerRadius), typeof(double), typeof(HeromeImage), 0.0);
 
 		public double CornerRadius
 		{
