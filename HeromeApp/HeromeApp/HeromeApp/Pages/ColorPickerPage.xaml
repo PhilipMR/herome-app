@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HeromeApp.Pages.ColorPickerPage"
              xmlns:forms="clr-namespace:FormsControls.Base;assembly=FormsControls.Base"
+             xmlns:shape="clr-namespace:XFShapeView;assembly=XFShapeView"
              BackgroundImage="background_nails"
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
@@ -62,46 +63,110 @@
                     VerticalOptions="StartAndExpand"
                     HeightRequest="70"
                     Spacing="20">
-                    <Image HorizontalOptions="FillAndExpand" Source="icon_skintype" x:Name="imgSkintype"/>
-                    <Image HorizontalOptions="FillAndExpand" Source="icon_nail_length" x:Name="imgLength"/>
-                    <Image HorizontalOptions="FillAndExpand" Source="icon_nail_skintype" x:Name="imgNailtype"/>
+                    <Image HorizontalOptions="FillAndExpand" Source="icon_skintype" x:Name="imgSkinType"/>
+                    <Image HorizontalOptions="FillAndExpand" Source="icon_nail_length" x:Name="imgNailLength"/>
+                    <Image HorizontalOptions="FillAndExpand" Source="icon_nail_skintype" x:Name="imgNailType"/>
                     <Image HorizontalOptions="FillAndExpand" Source="icon_nail_color" x:Name="imgNailColor"/>
                 </StackLayout>
                     
             </StackLayout>
 
-            <Grid
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <Image 
-                    Grid.Row="0" 
-                    Grid.Column="0"
-                    HorizontalOptions="StartAndExpand"
-                    VerticalOptions="EndAndExpand"
-                    Scale="2"
-                    TranslationX="-120"
-                    TranslationY="100"
-                    Rotation="55"
-                    Source="hand"
-                    />
-
-                <BoxView
-                    x:Name="menuBox"
+            <StackLayout Padding="0">
+                <shape:ShapeView 
+                    x:Name="menuArrow"
+                    ShapeType="Triangle" 
+                    Color="White" 
+                    WidthRequest="45" 
+                    HeightRequest="45"
+                    HorizontalOptions="Start"
+                    VerticalOptions="End"
                     Scale="0"
-                    IsEnabled="False"
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    BackgroundColor="White"
-                    />
-            </Grid>
-            
+                    TranslationY="10"/>
+                <Grid
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image 
+                        Grid.Row="0" 
+                        Grid.Column="0"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="EndAndExpand"
+                        Scale="2"
+                        TranslationX="-120"
+                        TranslationY="100"
+                        Rotation="55"
+                        Source="hand"
+                        />
+
+
+                    <!-- The menu for editing settings -->
+                    <Frame
+                        x:Name="menuBox"
+                        Scale="0"
+                        IsEnabled="False"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        BackgroundColor="White">
+
+                        <Grid
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- The skintype menu-->
+                            <Frame
+                                x:Name="menuSkinType"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                IsEnabled="False"
+                                IsVisible="False"
+                                BackgroundColor="Red">
+                            </Frame>
+
+                            <!-- The nail length menu-->
+                            <Frame
+                                x:Name="menuNailLength"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                IsEnabled="False"
+                                IsVisible="False"
+                                BackgroundColor="Green">
+                            </Frame>
+
+                            <!-- The nail type menu-->
+                            <Frame
+                                x:Name="menuNailType"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                IsEnabled="False"
+                                IsVisible="False"
+                                BackgroundColor="Blue">
+                            </Frame>
+
+                            <!-- The nail color menu -->
+                            <Frame
+                                x:Name="menuNailColor"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                IsEnabled="False"
+                                IsVisible="False"
+                                BackgroundColor="Purple">
+                            </Frame>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </forms:AnimationPage>

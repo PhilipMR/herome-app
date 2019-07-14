@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="VG.XFShapeView" Version="1.0.5" />
     <PackageReference Include="Xamarin.Facebook" Version="4.4.0.2" />
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.581479" />
     <PackageReference Include="XForms.Plugin.AnimationNavigationPage" Version="1.0.7" />

@@ -52,6 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="VG.XFShapeView">
+      <Version>1.0.5</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Facebook">
       <Version>4.4.0.2</Version>
     </PackageReference>
