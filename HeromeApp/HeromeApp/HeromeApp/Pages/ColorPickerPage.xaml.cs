@@ -71,7 +71,7 @@ namespace HeromeApp.Pages
         private async Task AnimateMoveMenuTriangle(MenuState menu)
         {
             var img = GetMenuImage(menu);
-            var tx = img.X - menuArrow.X;
+            var tx = img.X - menuArrow.X + 5;
             await menuArrow.TranslateTo(tx, menuArrow.TranslationY);
         }
 

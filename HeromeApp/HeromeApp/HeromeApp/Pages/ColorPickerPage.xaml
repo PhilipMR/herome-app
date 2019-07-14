@@ -112,11 +112,12 @@
                         IsEnabled="False"
                         Grid.Row="0"
                         Grid.Column="0"
-                        BackgroundColor="White">
+                        Padding="0">
 
                         <Grid
                             HorizontalOptions="FillAndExpand"
-                            VerticalOptions="FillAndExpand">
+                            VerticalOptions="FillAndExpand"
+                            Padding="0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
@@ -131,7 +132,59 @@
                                 Grid.Column="0"
                                 IsEnabled="False"
                                 Opacity="0"
-                                BackgroundColor="Red">
+                                HasShadow="False"
+                                Padding="8">
+
+                                <StackLayout Padding="0" Spacing="15">
+                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <BoxView 
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            BackgroundColor="#405f8d"
+                                            CornerRadius="5"/>
+                                        <Label        
+                                            Margin="5"
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            FontSize="Small"
+                                            FontFamily="{StaticResource OpenSans-Bold}"
+                                            TextColor="White"
+                                            Text="Selecteer hieronder de juiste skintone."
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"/>
+                                    </Grid>
+                                    <Label 
+                                        Text="Dark skin"
+                                        FontFamily="{StaticResource OpenSans-Bold}"
+                                        TextColor="#405f8d"
+                                        Margin="10,0,0,0"/>
+                                    <BoxView Color="#405f8d" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="3"/>
+                                    <Label 
+                                        Text="Light skin"
+                                        FontFamily="{StaticResource OpenSans-Bold}"
+                                        TextColor="#405f8d"
+                                        Margin="10,0,0,0"/>
+                                    <BoxView Color="#405f8d" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="3"/>
+                                    <Label 
+                                        Text="Europe"
+                                        FontFamily="{StaticResource OpenSans-Bold}"
+                                        TextColor="#405f8d"
+                                        Margin="10,0,0,0"/>
+                                    <BoxView Color="#405f8d" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="3"/>
+                                    <Label 
+                                        Text="East Asia"
+                                        FontFamily="{StaticResource OpenSans-Bold}"
+                                        TextColor="#405f8d"
+                                        Margin="10,0,0,0"/>
+                                </StackLayout>
+           
+
                             </Frame>
 
                             <!-- The nail length menu-->
