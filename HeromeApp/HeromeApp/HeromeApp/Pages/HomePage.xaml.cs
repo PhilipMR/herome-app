@@ -106,7 +106,8 @@ namespace HeromeApp.Pages
         {
             var model = CreateDummyQuestionaire();
             var fadeAnimation = new FadePageAnimation() { Duration = AnimationDuration.Short };
-            var page = new QuestionairePage(model, "Meer info over Nagellakdvies") { PageAnimation = fadeAnimation };
+            //var page = new QuestionairePage(model, "Meer info over Nagellakdvies") { PageAnimation = fadeAnimation };
+            var page = new ColorPickerPage() { PageAnimation = fadeAnimation };
             Navigation.PushAsync(page);
         }
 		#endregion
