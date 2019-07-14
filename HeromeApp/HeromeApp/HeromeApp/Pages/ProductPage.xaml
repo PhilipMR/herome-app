@@ -68,17 +68,20 @@
                         FontFamily="{StaticResource OpenSans-Bold}"
                         TextColor="White"
                         Text="Wij adviseren onderstaande producten voor zachte en verzorgde nagelriemen."
-                        Margin="15"/>
+                        Margin="5"/>
                 </Grid>
                 
 
                 <!-- The product -->
-                <WebView 
+                <Image 
+                    x:Name="imgProduct"
                     Grid.Row="1"
                     Grid.Column="0"
-                    HorizontalOptions="FillAndExpand" 
+                    HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
-                    Source="https://www.herome.com/online-shop/cuticle-care/cuticle-night-repair/"/>
+                    Source="https://www.herome.com/wp-content/uploads/2018/03/CUTICLE-NIGHT-REPAIR-WONDERPEN-01-4-600x600.jpg"
+                    />
+
             </Grid>
         </StackLayout>
     </ContentPage.Content>

@@ -7,7 +7,7 @@
              BackgroundImage="background_nails"
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
-        <StackLayout Padding="30,10,30,40" Spacing="20">
+        <StackLayout Padding="30,10,30,40" Spacing="10">
             <!-- The navigation bar -->
             <StackLayout
                 VerticalOptions="Start"
@@ -68,11 +68,10 @@
                     <Image HorizontalOptions="FillAndExpand" Source="icon_nail_skintype" x:Name="imgNailType"/>
                     <Image HorizontalOptions="FillAndExpand" Source="icon_nail_color" x:Name="imgNailColor"/>
                 </StackLayout>
-                    
-            </StackLayout>
 
-            <StackLayout Padding="0">
-                <shape:ShapeView 
+
+                <StackLayout Padding="0">
+                    <shape:ShapeView 
                     x:Name="menuArrow"
                     ShapeType="Triangle" 
                     Color="White" 
@@ -82,17 +81,17 @@
                     VerticalOptions="End"
                     Scale="0"
                     TranslationY="10"/>
-                <Grid
+                    <Grid
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                    <Image 
+                        <Image 
                         Grid.Row="0" 
                         Grid.Column="0"
                         HorizontalOptions="StartAndExpand"
@@ -105,8 +104,8 @@
                         />
 
 
-                    <!-- The menu for editing settings -->
-                    <Frame
+                        <!-- The menu for editing settings -->
+                        <Frame
                         x:Name="menuBox"
                         Scale="0"
                         IsEnabled="False"
@@ -114,19 +113,19 @@
                         Grid.Column="0"
                         Padding="0">
 
-                        <Grid
+                            <Grid
                             HorizontalOptions="FillAndExpand"
                             VerticalOptions="FillAndExpand"
                             Padding="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
 
-                            <!-- The skintype menu-->
-                            <Frame
+                                <!-- The skintype menu-->
+                                <Frame
                                 x:Name="menuSkinType"
                                 Grid.Row="0"
                                 Grid.Column="0"
@@ -135,20 +134,20 @@
                                 HasShadow="False"
                                 Padding="8">
 
-                                <StackLayout Padding="0" Spacing="15">
-                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="*"/>
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <BoxView 
+                                    <StackLayout Padding="0" Spacing="15">
+                                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <BoxView 
                                             Grid.Row="0"
                                             Grid.Column="0"
                                             BackgroundColor="#405f8d"
                                             CornerRadius="5"/>
-                                        <Label        
+                                            <Label        
                                             Margin="5"
                                             Grid.Row="0"
                                             Grid.Column="0"
@@ -158,68 +157,202 @@
                                             Text="Selecteer hieronder de juiste skintone."
                                             HorizontalOptions="Center"
                                             VerticalOptions="Center"/>
-                                    </Grid>
-                                    <Label 
+                                        </Grid>
+                                        <Label 
                                         Text="Dark skin"
                                         FontFamily="{StaticResource OpenSans-Bold}"
                                         TextColor="#405f8d"
                                         Margin="10,0,0,0"/>
-                                    <BoxView Color="#405f8d" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="3"/>
-                                    <Label 
+                                        <BoxView Color="#405f8d" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="3"/>
+                                        <Label 
                                         Text="Light skin"
                                         FontFamily="{StaticResource OpenSans-Bold}"
                                         TextColor="#405f8d"
                                         Margin="10,0,0,0"/>
-                                    <BoxView Color="#405f8d" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="3"/>
-                                    <Label 
+                                        <BoxView Color="#405f8d" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="3"/>
+                                        <Label 
                                         Text="Europe"
                                         FontFamily="{StaticResource OpenSans-Bold}"
                                         TextColor="#405f8d"
                                         Margin="10,0,0,0"/>
-                                    <BoxView Color="#405f8d" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="3"/>
-                                    <Label 
+                                        <BoxView Color="#405f8d" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="3"/>
+                                        <Label 
                                         Text="East Asia"
                                         FontFamily="{StaticResource OpenSans-Bold}"
                                         TextColor="#405f8d"
                                         Margin="10,0,0,0"/>
-                                </StackLayout>
-           
+                                    </StackLayout>
+                                </Frame>
 
-                            </Frame>
-
-                            <!-- The nail length menu-->
-                            <Frame
+                                <!-- The nail length menu-->
+                                <Frame
                                 x:Name="menuNailLength"
                                 Grid.Row="0"
                                 Grid.Column="0"
                                 IsEnabled="False"
                                 Opacity="0"
                                 BackgroundColor="Green">
-                            </Frame>
+                                </Frame>
 
-                            <!-- The nail type menu-->
-                            <Frame
+                                <!-- The nail type menu-->
+                                <Frame
                                 x:Name="menuNailType"
                                 Grid.Row="0"
                                 Grid.Column="0"
                                 IsEnabled="False"
                                 Opacity="0"
                                 BackgroundColor="Blue">
-                            </Frame>
+                                </Frame>
 
-                            <!-- The nail color menu -->
-                            <Frame
+                                <!-- The nail color menu -->
+                                <Frame
                                 x:Name="menuNailColor"
                                 Grid.Row="0"
                                 Grid.Column="0"
                                 IsEnabled="False"
                                 Opacity="0"
-                                BackgroundColor="Purple">
-                            </Frame>
-                        </Grid>
-                    </Frame>
-                </Grid>
+                                HasShadow="False"
+                                Padding="8">
+
+                                    <StackLayout Padding="0" Spacing="15">
+                                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <BoxView 
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            BackgroundColor="#405f8d"
+                                            CornerRadius="5"/>
+                                            <Label        
+                                            Margin="5"
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            FontSize="Small"
+                                            FontFamily="{StaticResource OpenSans-Bold}"
+                                            TextColor="White"
+                                            Text="Selecteer hieronder de juiste kleur."
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"/>
+                                        </Grid>
+
+
+                                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <!-- Row 0 -->
+                                            <shape:ShapeView
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            ShapeType="Circle"
+                                            Color="Red"/>
+                                            <shape:ShapeView
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            ShapeType="Circle"
+                                            Color="Green"/>
+                                            <shape:ShapeView
+                                            Grid.Row="0"
+                                            Grid.Column="2"
+                                            ShapeType="Circle"
+                                            Color="Blue"/>
+                                            <shape:ShapeView
+                                            Grid.Row="0"
+                                            Grid.Column="3"
+                                            ShapeType="Circle"
+                                            Color="Purple"/>
+
+                                            <!-- Row 1 -->
+                                            <shape:ShapeView
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            ShapeType="Circle"
+                                            Color="Red"/>
+                                            <shape:ShapeView
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            ShapeType="Circle"
+                                            Color="Green"/>
+                                            <shape:ShapeView
+                                            Grid.Row="1"
+                                            Grid.Column="2"
+                                            ShapeType="Circle"
+                                            Color="Blue"/>
+                                            <shape:ShapeView
+                                            Grid.Row="1"
+                                            Grid.Column="3"
+                                            ShapeType="Circle"
+                                            Color="Purple"/>
+
+                                            <!-- Row 2 -->
+                                            <shape:ShapeView
+                                            Grid.Row="2"
+                                            Grid.Column="0"
+                                            ShapeType="Circle"
+                                            Color="Red"/>
+                                            <shape:ShapeView
+                                            Grid.Row="2"
+                                            Grid.Column="1"
+                                            ShapeType="Circle"
+                                            Color="Green"/>
+                                            <shape:ShapeView
+                                            Grid.Row="2"
+                                            Grid.Column="2"
+                                            ShapeType="Circle"
+                                            Color="Blue"/>
+                                            <shape:ShapeView
+                                            Grid.Row="2"
+                                            Grid.Column="3"
+                                            ShapeType="Circle"
+                                            Color="Purple"/>
+
+                                            <!-- Row 3 -->
+                                            <shape:ShapeView
+                                            Grid.Row="3"
+                                            Grid.Column="0"
+                                            ShapeType="Circle"
+                                            Color="Red"/>
+                                            <shape:ShapeView
+                                            Grid.Row="3"
+                                            Grid.Column="1"
+                                            ShapeType="Circle"
+                                            Color="Green"/>
+                                            <shape:ShapeView
+                                            Grid.Row="3"
+                                            Grid.Column="2"
+                                            ShapeType="Circle"
+                                            Color="Blue"/>
+                                            <shape:ShapeView
+                                            Grid.Row="3"
+                                            Grid.Column="3"
+                                            ShapeType="Circle"
+                                            Color="Purple"/>
+                                        </Grid>
+
+
+
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </StackLayout>
             </StackLayout>
         </StackLayout>
+
     </ContentPage.Content>
 </forms:AnimationPage>
