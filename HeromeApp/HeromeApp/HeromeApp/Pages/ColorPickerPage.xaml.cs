@@ -78,13 +78,15 @@ namespace HeromeApp.Pages
         private async Task OpenMenu(MenuState menu)
         {
             if (_menuState != MenuState.Disabled) return;
-            await menuBox.ScaleTo(1);
-            await Task.WhenAll(new[] {
-                AnimateMoveMenuTriangle(menu),
-                menuArrow.ScaleTo(1)
-            });
+
             var frame = GetMenuFrame(menu);
-            frame.IsEnabled = frame.IsVisible = true;
+            await Task.WhenAll(new[] {
+                menuBox.ScaleTo(1),
+                AnimateMoveMenuTriangle(menu),
+                menuArrow.ScaleTo(1),
+                frame.FadeTo(1)
+            });     
+            frame.IsEnabled = true;
 
             menuBox.IsEnabled = true;
             _menuState = menu;
@@ -93,27 +95,33 @@ namespace HeromeApp.Pages
         private async Task CloseMenu()
         {
             if (_menuState == MenuState.Disabled) return;
+
+            var frame = GetMenuFrame(_menuState);
+            frame.IsEnabled = false;
+            menuBox.IsEnabled = false;
             await Task.WhenAll(new[] {
                 menuArrow.ScaleTo(0, 50),
-                menuBox.ScaleTo(0)
+                menuBox.ScaleTo(0),
+                frame.FadeTo(0)
             });
-            var frame = GetMenuFrame(_menuState);
-            frame.IsEnabled = frame.IsVisible = false;
-
-            menuBox.IsEnabled = false;
             _menuState = MenuState.Disabled;
         }
 
         private async Task ChangeMenu(MenuState menu)
         {
-            var frame = GetMenuFrame(_menuState);
-            frame.IsEnabled = frame.IsVisible = false;
+            var oldFrame = GetMenuFrame(_menuState);
+            oldFrame.IsEnabled = false;
+            var nextFrame = GetMenuFrame(menu);
+            nextFrame.IsEnabled = true;
 
-            await AnimateMoveMenuTriangle(menu);
+            await Task.WhenAll(new[]
+            {
+                AnimateMoveMenuTriangle(menu),
+                oldFrame.FadeTo(0),
+                nextFrame.FadeTo(1)
+            });
+
             _menuState = menu;
-
-            frame = GetMenuFrame(_menuState);
-            frame.IsEnabled = frame.IsVisible = true;
         }
 
         private async void HandleMenuClick(MenuState menu)

@@ -130,7 +130,7 @@
                                 Grid.Row="0"
                                 Grid.Column="0"
                                 IsEnabled="False"
-                                IsVisible="False"
+                                Opacity="0"
                                 BackgroundColor="Red">
                             </Frame>
 
@@ -140,7 +140,7 @@
                                 Grid.Row="0"
                                 Grid.Column="0"
                                 IsEnabled="False"
-                                IsVisible="False"
+                                Opacity="0"
                                 BackgroundColor="Green">
                             </Frame>
 
@@ -150,7 +150,7 @@
                                 Grid.Row="0"
                                 Grid.Column="0"
                                 IsEnabled="False"
-                                IsVisible="False"
+                                Opacity="0"
                                 BackgroundColor="Blue">
                             </Frame>
 
@@ -160,7 +160,7 @@
                                 Grid.Row="0"
                                 Grid.Column="0"
                                 IsEnabled="False"
-                                IsVisible="False"
+                                Opacity="0"
                                 BackgroundColor="Purple">
                             </Frame>
                         </Grid>
