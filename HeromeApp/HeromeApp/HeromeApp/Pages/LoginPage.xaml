@@ -19,9 +19,12 @@
                     FontFamily="{StaticResource OpenSans-Regular}"
                     FontSize="Small"/>
 
-            <StackLayout Spacing="5" 
-                     VerticalOptions="Fill"  
-                     Padding="10, 30, 10, 50">
+            <!-- Login with credentials (default layout) -->
+            <StackLayout 
+                x:Name="layoutLogin"
+                Spacing="5" 
+                VerticalOptions="Fill"  
+                Padding="10, 30, 10, 50">
 
                 <!-- Login with regular credentials -->
                 <StackLayout Orientation="Vertical">
@@ -130,6 +133,36 @@
                     BackgroundColor="Transparent"
                     Clicked="SkipLogin_Clicked"/>
             </StackLayout>
+
+
+            <!-- Reset password (alternative layout) -->
+            <StackLayout    
+                x:Name="layoutReset"
+                Spacing="5" 
+                VerticalOptions="Fill"  
+                Opacity="0"
+                Padding="10, 30, 10, 50"
+                BackgroundColor="Red">
+                
+                <StackLayout Orientation="Vertical">
+                    <controls:HeromeImageEntry 
+                        x:Name="txtEmailReset"
+                        Placeholder="E-mail"
+                        PlaceholderColor="White" 
+                        TextColor="White"
+                        Keyboard="Email"
+                        FontFamily="{StaticResource OpenSans-Light}"
+                        FontSize="Small"
+                        Image="icon_email"
+                        ImageWidth="30"
+                        ImageHeight="20"/>
+                    <controls:HeromeButton
+                        x:Name="btnResetPassword"
+                        Text="Reset password"
+                        />
+                </StackLayout>
+            </StackLayout>
+            
         </StackLayout>
 
     </ContentPage.Content>

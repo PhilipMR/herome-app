@@ -1,12 +1,20 @@
 ﻿using FormsControls.Base;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace HeromeApp.Pages
 {
     public partial class LoginPage : AnimationPage
     {
+        private enum Mode
+        {
+            Login,
+            Reset
+        }
+        private Mode _mode = Mode.Login;
+
 		#region Constructors
 		public LoginPage()
         {
@@ -22,10 +30,41 @@ namespace HeromeApp.Pages
 				NumberOfTapsRequired = 1
 			});
 		}
-		#endregion
+        #endregion
 
-		#region Control events
-		private void LoginButton_Clicked(object sender, EventArgs e)
+
+
+        private async Task SwitchMode(Mode mode)
+        {
+            if (mode == _mode) return;
+            if (mode == Mode.Login)
+            {
+                await Task.WhenAll(new[]
+                {
+                    layoutLogin.FadeTo(1),
+                    layoutReset.FadeTo(0)
+                });
+                layoutLogin.IsEnabled = true;
+                layoutReset.IsEnabled = false;
+                _mode = Mode.Login;
+            }
+            else if (mode == Mode.Reset)
+            {
+                await Task.WhenAll(new[]
+                {
+                    layoutLogin.FadeTo(0),
+                    layoutReset.FadeTo(1)
+                });
+                layoutLogin.IsEnabled = false;
+                layoutReset.IsEnabled = true;
+                _mode = Mode.Reset;
+            }
+            _mode = mode;
+        }
+
+
+        #region Control events
+        private void LoginButton_Clicked(object sender, EventArgs e)
         {
 			Console.WriteLine("Login button clicked!");
 
@@ -46,10 +85,20 @@ namespace HeromeApp.Pages
 
 		private void ForgotPassword_Clicked(object sender, EventArgs e)
 		{
-			Console.WriteLine("Forgot password button clicked!");
+            SwitchMode(Mode.Reset);
 		}
 
-		private void LoginFacebook_Clicked()
+        protected override bool OnBackButtonPressed()
+        {
+            if (_mode == Mode.Reset)
+            {
+                SwitchMode(Mode.Login);
+                return true;
+            }
+            return base.OnBackButtonPressed();
+        }
+
+        private void LoginFacebook_Clicked()
 		{
 			Console.WriteLine("Login with facebook image clicked!");
 		}
