@@ -1,12 +1,8 @@
 # herome-app (DISCONTINUED)
-```
-Changelog:
-31/10/2018: Created the repository and initial readme file.
-```
 
 ### Brief summary:
 Cosmetica application for iOS and Android, built with Xamarin.  
-~~he scrum board can be found here: https://trello.com/b/h8mwuFH8/herome-app
+~~the scrum board can be found here: https://trello.com/b/h8mwuFH8/herome-app~~
 
 ### Contributors:   
 * Philip Roozendaal (philip.roozendaal@gmail.com)
